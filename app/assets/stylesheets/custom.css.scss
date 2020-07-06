@@ -1,0 +1,194 @@
+body, html {
+  margin: 0 !important;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  background: url('https://i.ibb.co/87xhXsK/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#page-content {
+  min-height: 91vh;
+}
+
+.navbar-custom {
+  background-color: #785589 !important;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.navbar-brand, navbar-brand:hover {
+  font-size: 1.8rem;
+  font-family: 'Staatliches', cursive;
+  background-color: #785589 !important;
+}
+
+.nav-link, .nav-link:hover {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #785589;
+}
+
+.footer {
+  min-height: 40px;
+  color: white;
+  background-color: #04030F;
+}
+
+#footer-text {
+  line-height: 40px;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.jumbotron {
+  background-image:
+  linear-gradient(
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)
+  ), 
+  url('https://i.ibb.co/TLM7r24/home2.jpg');
+  background-size: cover;
+  height: 90vh;
+  color: white;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+.btn-primary {
+  background-color: #00B295;
+  border-color: #00B295;
+  color: black;
+  margin-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn-primary:hover {
+  background-color: #785589;
+}
+
+#form {
+  height: 85vh;
+  margin-top: 40px;
+}
+
+form {
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+  color: antiquewhite;
+  font-family: 'Staatliches', cursive;
+  padding: 20px;
+}
+
+
+label {
+  color: antiquewhite;
+}
+
+.underbutton {
+  margin: 20px;
+  color: antiquewhite;
+  font-size: smaller;
+}
+
+.card {
+  background-color: antiquewhite;
+  margin: 5px;
+  margin-bottom: 30px;
+  border-radius: 25px;
+}  
+
+.card-img-top {
+  padding: 20px;
+  border-radius: 35px;
+  max-width: 100%;
+}
+
+/* User show page */
+
+
+.profile-pic {
+  width: 15rem;
+}
+
+a {
+  color: darkslategrey;
+}
+
+a:hover {
+  color: #785589;
+}
+
+h3 {
+  margin: 30px;
+  font-family: 'Staatliches', cursive;
+  color: antiquewhite;
+}
+
+.border {
+  border-radius: 3px;
+  margin: 0px;
+}
+
+.btn-dark {
+  background-color: #007A66;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+#background {
+  background-color: antiquewhite;
+}
+
+#event_button {
+  margin: 15px !important;
+  width: 9rem;
+  font-size: 1.2rem;
+}
+
+ul {
+  border-radius: 25px !important;
+}
+
+#profile_photo {
+  width: 100%;
+  height: auto;
+  max-width: 20rem;
+}
+
+.edit-text {
+  color: black;
+  font-weight: bold;
+  font-size: large;
+}
+
+textarea {
+  width: 300px;
+  height: 200px;
+}
+
+.edit {
+  min-height: 90vh;
+}
+
+#edit-buttons {
+  margin: 20px;
+}

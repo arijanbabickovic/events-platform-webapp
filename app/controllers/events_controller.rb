@@ -11,6 +11,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    
   end
 
   # GET /events/new
@@ -26,6 +27,8 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
+    current_user.events << @event
 
     respond_to do |format|
       if @event.save
@@ -61,6 +64,12 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # def rsvp
+  #   rsvp = Rsvp.new(user_id: current_user.id, event_id: @event.id, status: :attending)
+  #   rsvp.save
+  #   redirect_to root_path, notice: 'You have successfully RSVPd for the event!'
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,7 +78,8 @@ class EventsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
+
     def event_params
-      params.fetch(:event, {})
+    params.require(:event).permit(:title, :description, :datetime, :longitude, :latitude)
     end
 end

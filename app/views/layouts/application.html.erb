@@ -6,10 +6,17 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Staatliches&display=swap');
+    </style>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/navigation" %>
+    <div id="page-content">
+      <%= yield %>
+    </div>  
+    <%= render "layouts/footer" %>
   </body>
 </html>

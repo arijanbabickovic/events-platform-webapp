@@ -6,5 +6,5 @@ class User < ApplicationRecord
          
   has_many :events, dependent: :destroy
   has_many :rsvps, foreign_key: :user_id, class_name: "Rsvp"
-  has_many :responses, through: :rsvps
+  has_many :responses, through: :rsvps, source: :event
 end

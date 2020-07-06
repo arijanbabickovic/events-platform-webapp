@@ -1,0 +1,24 @@
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+      <% @events.each do |event| %>
+         <div class="col-lg col-md-6">
+           <div class="card">
+             <img class="card-img-top img-fluid" src="https://i.ibb.co/jGPP6YB/card1.jpg" alt="event1">
+             <div class="card-body d-flex flex-column">
+                 <h4 class="font-weight-bold"><%= event.title %></h4>
+                 <h6 class="font-italic">Wednesday, 5th of August - 18:00</h2>
+                 <p><%= event.description %></p>
+                 <div class="row">
+                   <div class="col">
+                     <%= link_to "Details", event_path(event), class: "btn btn-secondary btn-block stretched-link mt-auto" %>
+                   </div>
+                   <div class="col">
+                     <%= link_to "Attend", attend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
+                   </div>
+                 </div>
+             </div>
+           </div>
+         </div>
+      <% end %>
+   </div>
+</div>

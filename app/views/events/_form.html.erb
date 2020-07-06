@@ -10,6 +10,16 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= form.label :title %><br />
+    <%= form.text_field :title, autofocus: true, placeholder: "Title" %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :description %><br />
+    <%= form.text_field :description, autofocus: true, placeholder: "Title" %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
