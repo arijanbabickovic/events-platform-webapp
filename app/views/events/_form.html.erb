@@ -11,17 +11,24 @@
     </div>
   <% end %>
   
-  <div class="field">
-    <%= form.label :title %><br />
-    <%= form.text_field :title, autofocus: true, placeholder: "Title" %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :description %><br />
-    <%= form.text_field :description, autofocus: true, placeholder: "Title" %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="container">
+      <div class="form-group">
+        <%= form.label :title %><br />
+        <%= form.text_field :title, class: "form-control", autofocus: true, placeholder: "Title" %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.label :description %><br />
+        <%= form.text_area :description, size: "24x12", class: "form-control", autofocus: true, placeholder: "Description" %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.label :datetime %><br />
+        <%= form.datetime_select :datetime, class: "form-control", autofocus: true %>
+      </div>
+    
+      <div class="col-md col-sm-12">
+        <%= form.submit class: "actions btn btn-dark btn-block stretched-link mt-auto" %>
+      </div>
+    </div>
 <% end %>

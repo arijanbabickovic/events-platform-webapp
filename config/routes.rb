@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   
   get 'events/:id/attend', to: 'rsvps#attend', as: 'attend_event'
   get 'events/:id/unattend', to: 'rsvps#unattend', as: 'unattend_event'
+  resources :users, only: [:show, :edit, :update]
   root to: "pages#home"
+  
 end

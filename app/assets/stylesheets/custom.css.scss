@@ -17,6 +17,21 @@ body {
 
 #page-content {
   min-height: 91vh;
+  flex: 1 0 auto;
+}
+
+#message {
+  position: absolute;
+  z-index: 999;
+  
+  left:0;
+  right:0;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3px;
+  
+  width: 40%;
 }
 
 .navbar-custom {
@@ -60,12 +75,16 @@ p {
   ), 
   url('https://i.ibb.co/TLM7r24/home2.jpg');
   background-size: cover;
-  height: 90vh;
+  min-height: 92vh;
   color: white;
   text-align: center;
   align-items: center;
   margin-bottom: 0px;
   border-radius: 0px;
+}
+
+.btn:visited {
+  color: white;
 }
 
 .btn-primary {
@@ -85,15 +104,12 @@ p {
   margin-top: 40px;
 }
 
-form {
-  padding: 40px;
-}
 
-h1 {
+h1, h2 {
   text-align: center;
   color: antiquewhite;
   font-family: 'Staatliches', cursive;
-  padding: 20px;
+  padding-top: 20px;
 }
 
 
@@ -131,6 +147,8 @@ a {
   color: darkslategrey;
 }
 
+
+
 a:hover {
   color: #785589;
 }
@@ -158,11 +176,6 @@ h3 {
   background-color: antiquewhite;
 }
 
-#event_button {
-  margin: 15px !important;
-  width: 9rem;
-  font-size: 1.2rem;
-}
 
 ul {
   border-radius: 25px !important;
@@ -190,5 +203,19 @@ textarea {
 }
 
 #edit-buttons {
-  margin: 20px;
+  margin: 20px !important;
+}
+
+.form-group {
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+
+.on-dark-background {
+  color: white;
+}
+
+.form-questions {
+  font-size: 20px;
 }

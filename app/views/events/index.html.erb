@@ -1,10 +1,33 @@
-<p id="notice"><%= notice %></p>
-
 <h1 class="text-center">Events</h1>
 
-<%= render 'event' %>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
-<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+<div class="container-fluid">
+   <div class="row justify-content-md-center">
+      <% @events.each do |event| %>
+         <div class="col-lg-3 col-md-6">
+            <div class="card">
+               <img class="card-img-top img-fluid" src="https://i.ibb.co/jGPP6YB/card1.jpg" alt="event1">
+                  <div class="card-body d-flex flex-column">
+                    <h4 class="font-weight-bold"><%= event.title %></h4>
+                    <h6 class="font-italic"><%= event.datetime.strftime("%d/%m/%Y %I:%M%p") %></h6>
+                    <p><%= event.description %></p>
+                    <div class="row">
+                      <div class="col">
+                        <%= link_to "Details", event_path(event), class: "btn btn-secondary btn-block stretched-link mt-auto" %>
+                      </div>
+                      <% @rsvp = Rsvp.find_by(event_id: event.id, user_id: current_user.id) %>
+                      <% if @rsvp != nil && @rsvp.attending_status? %>
+                         <div class="col">
+                           <%= link_to "Unattend", unattend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
+                         </div>
+                      <% else %>
+                         <div class="col">
+                           <%= link_to "Attend", attend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
+                         </div>
+                      <% end %>
+                    </div>
+                  </div>
+            </div>
+         </div>
+      <% end %>
+   </div>
+</div>

@@ -1,10 +1,32 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= @event.title %></h1>
   
-  <h5>by <%= @event.user.first_name %></h5>
-  <p> <%= simple_format(@event.description) %> </p>
-  <%= link_to "Edit", edit_event_path(@event) %> |
-  <%= link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are you sure?" } %> |
-  <%= link_to 'Back', events_path %>
-  <%= link_to 'Attend', attend_event_path(@event) %>
+<div class="container">
+  <div class="card">
+    <div class="row">
+      <div class="col-md-4">
+        <img class="card-img-top" src="https://i.ibb.co/jGPP6YB/card1.jpg" alt="Card image cap">
+        <ul class="list-group list-group-flush" id="event_details">
+          <li class="list-group-item"><b>Organised by:</b> <i><%= link_to @event.user.first_name, user_path(@event.user) %></i></li>
+          <li class="list-group-item"><b>Time:</b> <i><%= @event.datetime.strftime("%d-%m-%Y %I:%M%p") %></i></li>
+          <li class="list-group-item"><b>Location:</b> <i>Location 1</i></li>
+        </ul>
+        <div class="row" id="edit-buttons">
+          <div class="col-md col-sm-12">
+            <%= link_to "Delete", event_path(@event), class: "btn btn-danger btn-block stretched-link mt-auto", method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
+          <div class="col-md col-sm-12">
+            <%= link_to "Edit", edit_event_path(@event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card-body">
+          <p class="card-text"><%= @event.description %></p>
+        </div>
+        <div>
+          <img class="card-img-top" src="https://i.ibb.co/Lxw2yHh/location.jpg" alt="Card image cap">
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
