@@ -5,25 +5,33 @@
      <div class="card">
        <div class="row">
          <div class="col-md-4">
-           <img class="card-img-top" src="https://i.ibb.co/VTKRvxK/profile.jpg" alt="Card image cap" id="profile_photo">
+            <% if @user.avatar.attached? %>
+               <%= image_tag @user.avatar.variant(resize_to_limit: [300, nil]), class: "avatar", style: "width: 300px; display: block;" %>  
+            <% else %>
+               <%= image_tag "https://i.ibb.co/9cQ2KGL/avatar.png", class: "avatar", style: "width: 300px; display: block;" %>
+            <% end %>
            <ul class="list-group list-group-flush">
              <li class="list-group-item"><b>Member since:</b> <i><%= @user.created_at.strftime("%d/%m/%Y") %></i>
-             <li class="list-group-item"><b>Events created:</b> <i>2</i></li>
+             <li class="list-group-item"><b>Events created:</b> <i><%= @user.events.count %></i></li>
            </ul>
-           <div class="text-center">
-             <%= link_to "Edit profile", edit_user_registration_path(@user), type: "button", class: "btn btn-dark stretched-link mt-auto", id: "event_button" %>
-           </div>
+            <% if current_user == @user %>
+              <div class="text-center">
+                <%= link_to "Edit profile", edit_user_registration_path(@user), type: "button", class: "btn btn-dark stretched-link mt-auto", id: "event-button" %>
+              </div>
+            <% end %>
          </div>
          <div class="col-md">
            <div class="card-body">
              <ul class="list-group list-group-flush">
                <li class="list-group-item"><p><b>First name: </b><%= @user.first_name %></p></li>
                <li class="list-group-item"><p><b>Last name: </b><%= @user.last_name %></p></li>
+               <li class="list-group-item"><p><b>Birthday: </b><%= @user.birthday.strftime("%d/%m/%Y") unless @user.birthday == nil  %></p></li>
+               <li class="list-group-item"><p><b>City: </b><%= @user.city %></p></li>
              </ul>
            </div>
            <div class="card-body">
              <h5>Bio:</h5>
-             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+             <p class="card-text"><%= @user.bio %></p>
            </div> 
          </div>
        </div>
@@ -41,6 +49,7 @@
                   <div class="card-body d-flex flex-column">
                     <h4 class="font-weight-bold"><%= event.title %></h4>
                     <h6 class="font-italic"><%= event.datetime.strftime("%d-%m-%Y %I:%M%p") %></h6>
+                    <smaller <b>Created by:</b> <i><%= link_to event.user.first_name, user_path(event.user) %></i></smaller> <br>
                     <p><%= event.description %></p>
                     <div class="row">
                       <div class="col">

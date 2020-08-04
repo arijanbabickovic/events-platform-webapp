@@ -1,54 +1,79 @@
 <h2>Sign up</h2>
 
-
-<div class="container" id="form">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="container">  
     <%= render "devise/shared/error_messages", resource: resource %>
-  
     <div class="row">  
-      <div class="col">
+      <div class="col-lg-6 col-sm-12">
         <div class="form-group">
-          <%= f.label :first_name %><br />
+          <%= f.label :first_name, class: "form-questions" %><br />
           <%= f.text_field :first_name, class: "form-control input-sm", autofocus: true, placeholder: "First name" %>
         </div>
       </div>
       
-      <div class="col">
+      <div class="col-lg-6 col-sm-12">
         <div class="form-group">
-          <%= f.label :last_name %><br />
+          <%= f.label :last_name, class: "form-questions" %><br />
           <%= f.text_field :last_name, class: "form-control input-sm", autofocus: true, placeholder: "Last name" %>
         </div>
       </div>
     </div>
-  
-    <div class="row">
+      
+    <div class="row">  
+      <div class="col-lg-6 col-sm-12">
+        <div class="form-group">
+          <%= f.label :birthday, class: "form-questions" %><br />
+          <%= f.date_select :birthday, class: "form-control input-sm", autofocus: true %>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <div class="form-group">
+          <%= f.label :city, class: "form-questions" %><br />
+          <%= f.text_field :city, class: "form-control input-sm", autofocus: true, placeholder: "City" %>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="row">  
       <div class="col">
         <div class="form-group">
-          <%= f.label :email %><br />
+          <%= f.label :bio, class: "form-questions" %><br />
+          <%= f.text_area :bio, size: "24x8", class: "form-control input-sm", autofocus: true, placeholder: "Write about yourself" %>
+        </div>
+      </div>
+    </div>
+      
+      
+    
+    <div class="row">
+      <div class="col-lg-4 col-sm-12">
+        <div class="form-group">
+          <%= f.label :email, class: "form-questions" %><br />
           <%= f.email_field :email, class: "form-control input-sm", autofocus: true, autocomplete: "email" %>
         </div>
       </div>
-      <div class="col">
+      <div class="col-lg-4 col-sm-12">
         <div class="form-group">
-          <%= f.label :password %>
+          <%= f.label :password, class: "form-questions" %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em class="on-dark-background">(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
           <%= f.password_field :password, class: "form-control input-sm", autocomplete: "new-password" %>
         </div>
       </div>
-      <div class="col">
+      <div class="col-lg-4 col-sm-12">
         <div class="form-group">
-          <%= f.label :password_confirmation %><br />
+          <%= f.label :password_confirmation, class: "form-questions" %><br />
           <%= f.password_field :password_confirmation, class: "form-control input-sm", autocomplete: "new-password" %>
         </div>
       </div>  
     </div>
-  
+    
     <div class="actions text-center">
       <%= f.submit "Sign up", class: "btn btn-primary"%>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
 <%= render "devise/shared/links" %>

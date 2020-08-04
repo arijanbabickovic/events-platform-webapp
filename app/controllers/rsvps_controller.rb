@@ -7,6 +7,8 @@ class RsvpsController < ApplicationController
       rsvp = Rsvp.new(user_id: current_user.id, event_id: @event.id, status: :attending) if rsvp == nil
       rsvp.attending_status!
       rsvp.save
+      RsvpMailer.user_attended(@event, current_user).deliver_now
+      EventsMailer.reminder(@event, current_user).deliver_later(wait_until: @event.datetime.to_time - 24.hours)
       redirect_to events_path, notice: 'You are attending the event.'
    end
    

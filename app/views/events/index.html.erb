@@ -5,26 +5,37 @@
       <% @events.each do |event| %>
          <div class="col-lg-3 col-md-6">
             <div class="card">
-               <img class="card-img-top img-fluid" src="https://i.ibb.co/jGPP6YB/card1.jpg" alt="event1">
+               <% if event.main_image.attached? %>
+                 <%= image_tag event.main_image, class: "main-image" %>  
+               <% else %>
+                 <%= image_tag "defaultevent.jpg", class: "main-image" %>
+               <% end %>
                   <div class="card-body d-flex flex-column">
-                    <h4 class="font-weight-bold"><%= event.title %></h4>
-                    <h6 class="font-italic"><%= event.datetime.strftime("%d/%m/%Y %I:%M%p") %></h6>
-                    <p><%= event.description %></p>
-                    <div class="row">
-                      <div class="col">
+                     <h4 class="font-weight-bold"><%= event.title %></h4>
+                     <h6 class="font-italic"><%= event.datetime.strftime("%d/%m/%Y %I:%M%p") %></h6>
+                     <smaller <b>Created by:</b> <i><%= link_to event.user.first_name, user_path(event.user) %></i></smaller> <br>
+                     <p><%= event.description %></p>
+                     <div class="row">
+                     <div class="col">
                         <%= link_to "Details", event_path(event), class: "btn btn-secondary btn-block stretched-link mt-auto" %>
-                      </div>
-                      <% @rsvp = Rsvp.find_by(event_id: event.id, user_id: current_user.id) %>
-                      <% if @rsvp != nil && @rsvp.attending_status? %>
-                         <div class="col">
-                           <%= link_to "Unattend", unattend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
-                         </div>
-                      <% else %>
-                         <div class="col">
-                           <%= link_to "Attend", attend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
-                         </div>
-                      <% end %>
-                    </div>
+                     </div>
+                     <% if can? :update, event %>
+                        <div class="col">
+                          <%= link_to "Edit", edit_event_path(event), class: "btn btn-warning btn-block stretched-link mt-auto" %>
+                        </div>
+                     <% else %>
+                     <% @rsvp = Rsvp.find_by(event_id: event.id, user_id: current_user.id) %>
+                         <% if @rsvp != nil && @rsvp.attending_status? %>
+                            <div class="col">
+                              <%= link_to "Unattend", unattend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
+                            </div>
+                         <% else %>
+                            <div class="col">
+                              <%= link_to "Attend", attend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
+                            </div>
+                         <% end %>
+                     <% end %>
+                     </div>
                   </div>
             </div>
          </div>

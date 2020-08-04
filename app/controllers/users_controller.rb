@@ -18,11 +18,22 @@ class UsersController < ApplicationController
         end
     end
     
+    def admin
+        @users = User.all
+        render 'admin'
+    end
+    
+    def change_permission
+        # check if current user is admin
+        User.change_permission(params[:permission])
+        redirect_to admin_dashboard_path
+    end
+    
     
     private
     
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :password)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :bio, :city, :birthday)
     end
     
     def set_user

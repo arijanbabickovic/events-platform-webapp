@@ -3,30 +3,73 @@
 <div class="container">
   <div class="card">
     <div class="row">
-      <div class="col-md-4">
-        <img class="card-img-top" src="https://i.ibb.co/jGPP6YB/card1.jpg" alt="Card image cap">
+      <div class="col-md-5">
+        <% if @event.main_image.attached? %>
+           <%= image_tag @event.main_image, class: "main-image" %>  
+        <% else %>
+           <%= image_tag "defaultevent.jpg", class: "main-image" %>
+        <% end %>
         <ul class="list-group list-group-flush" id="event_details">
-          <li class="list-group-item"><b>Organised by:</b> <i><%= link_to @event.user.first_name, user_path(@event.user) %></i></li>
-          <li class="list-group-item"><b>Time:</b> <i><%= @event.datetime.strftime("%d-%m-%Y %I:%M%p") %></i></li>
-          <li class="list-group-item"><b>Location:</b> <i>Location 1</i></li>
+          <li class="list-group-item"><b>Created by:</b> <i><%= link_to @event.user.first_name, user_path(@event.user) %></i></li>
+          <li class="list-group-item"><b>Time:</b> <i><%= @event.datetime.strftime("%d-%m-%Y %I:%M%p") %></i></li> <br>
+          <li class="list-group-item"><b>Location:</b></li>
+          <li class="list-group-item"><i><%= @event.address_first_line %></i></li>
+          <% unless @event.address_second_line.empty? %>
+            <li class="list-group-item"><i><%= @event.address_second_line %></i></li>
+          <% end %>
+          <li class="list-group-item"><i><%= @event.postcode %></i></li>
+          <li class="list-group-item"><i><%= @event.city %></i></li>
         </ul>
         <div class="row" id="edit-buttons">
-          <div class="col-md col-sm-12">
-            <%= link_to "Delete", event_path(@event), class: "btn btn-danger btn-block stretched-link mt-auto", method: :delete, data: { confirm: "Are you sure?" } %>
-          </div>
-          <div class="col-md col-sm-12">
-            <%= link_to "Edit", edit_event_path(@event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
-          </div>
+          <% if can? :manage, @event %>
+            <div class="col-md col-sm-12">
+              <%= link_to "Delete", event_path(@event), class: "btn btn-danger btn-block stretched-link mt-auto", method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
+            <div class="col-md col-sm-12">
+              <%= link_to "Edit", edit_event_path(@event), class: "btn btn-warning btn-block stretched-link mt-auto" %>
+            </div>
+          <% else %>
+          <% @rsvp = Rsvp.find_by(event_id: @event.id, user_id: current_user.id) %>
+            <% if @rsvp != nil && @rsvp.attending_status? %>
+              <div class="col text-center">
+                <%= link_to "Unattend", unattend_event_path(@event), class: "btn btn-dark" %>
+              </div>
+            <% else %>
+              <div class="col text-center">
+                <%= link_to "Attend", attend_event_path(@event), class: "btn btn-dark" %>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <div class="col-md">
-        <div class="card-body">
-          <p class="card-text"><%= @event.description %></p>
+        <div class="row">
+          <div class="card-body" id="event-description">
+            <p class="card-text"><%= @event.description %></p>
+          </div>
         </div>
         <div>
-          <img class="card-img-top" src="https://i.ibb.co/Lxw2yHh/location.jpg" alt="Card image cap">
+          <!--The div element for the map -->
+          <div id="map"></div>
+          <script>
+            // Initialize and add the map
+            function initMap() {
+              // The location of Uluru
+              var uluru = {lat: <%= @event.latitude %>, lng: <%= @event.longitude %>};
+              // The map, centered at Uluru
+              var map = new google.maps.Map(
+                  document.getElementById('map'), {zoom: 17, center: uluru});
+              // The marker, positioned at Uluru
+              var marker = new google.maps.Marker({position: uluru, map: map});
+            }
+          </script>
+          <script defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEAKjVoORdw_VKELa02BgMMqF3M7YCAd8&callback=initMap">
+          </script>
         </div> 
       </div>
+      
+      
     </div>
   </div>
 </div>

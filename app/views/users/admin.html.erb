@@ -1,0 +1,39 @@
+<h2 class="text-center mt-4">Admin Dashboard</h2>
+
+<div class="container text-center">
+   <div class="card">
+      <div class="row">
+         <div class="col">
+            Name:
+         </div>
+         <div class="col">
+            Regular
+         </div>
+         <div class="col">
+            Creator
+         </div>
+         <div class="col">
+            Admin
+         </div>
+      </div>
+      <%= form_for :user, url: change_permission_path do |f| %>
+      <% @users.each do |user| %>
+         <div class="row">
+            <div class="col">
+               <%= user.name %>
+            </div>
+            <div class="col">
+               <%= radio_button_tag "permission[#{user.id}]", 'regular', user.permissions == 'regular' %>
+            </div>
+            <div class="col">
+               <%= radio_button_tag "permission[#{user.id}]", 'creator', user.permissions == 'creator' %>
+            </div>
+            <div class="col">
+               <%= radio_button_tag "permission[#{user.id}]", 'admin', user.permissions == 'admin' %>
+            </div>
+         </div>
+      <% end %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+   </div>
+</div>

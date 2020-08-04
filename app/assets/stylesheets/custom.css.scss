@@ -5,7 +5,7 @@ body, html {
 
 body {
   height: 100%;
-  background: url('https://i.ibb.co/87xhXsK/background.jpg');
+  background: asset-url('background.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -107,27 +107,28 @@ p {
 
 h1, h2 {
   text-align: center;
-  color: antiquewhite;
+  color: white;
   font-family: 'Staatliches', cursive;
   padding-top: 20px;
 }
 
 
 label {
-  color: antiquewhite;
+  color: white;
 }
 
 .underbutton {
   margin: 20px;
-  color: antiquewhite;
+  color: white;
   font-size: smaller;
 }
 
 .card {
-  background-color: antiquewhite;
+  background-color: white;
   margin: 5px;
   margin-bottom: 30px;
   border-radius: 25px;
+  padding-bottom: 10px;
 }  
 
 .card-img-top {
@@ -156,7 +157,7 @@ a:hover {
 h3 {
   margin: 30px;
   font-family: 'Staatliches', cursive;
-  color: antiquewhite;
+  color: white;
 }
 
 .border {
@@ -168,12 +169,16 @@ h3 {
   background-color: #007A66;
 }
 
+.btn-danger {
+  margin-top: 20px;
+}
+
 .row {
   margin-top: 20px;
 }
 
 #background {
-  background-color: antiquewhite;
+  background-color: white;
 }
 
 
@@ -211,11 +216,52 @@ textarea {
   margin-top: 30px;
 }
 
+#event-button {
+  margin: 10px !important;
+}
 
 .on-dark-background {
   color: white;
 }
 
 .form-questions {
-  font-size: 20px;
+  font-size: 15px;
+}
+
+#error-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+}
+
+.avatar {
+  margin: 10px;
+  border-radius: 25px;
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.main-image {
+  margin: 10px;
+  border-radius: 25px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-warning {
+  background-color: #090722;
+  border-color: #090722;
+  color: white;
+}
+
+#map {
+  height: 400px;
+  margin: 20px;
+}
+
+#event-description {
+  min-height: 200px;
+  padding-left: 40px;
 }

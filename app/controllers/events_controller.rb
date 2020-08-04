@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
@@ -74,6 +75,6 @@ class EventsController < ApplicationController
     # Only allow a list of trusted parameters through.
 
     def event_params
-    params.require(:event).permit(:title, :description, :datetime, :longitude, :latitude)
+    params.require(:event).permit(:title, :description, :datetime, :address_first_line, :address_second_line, :city, :postcode, :main_image)
     end
 end
