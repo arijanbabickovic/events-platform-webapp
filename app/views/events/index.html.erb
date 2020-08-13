@@ -1,12 +1,16 @@
 <h1 class="text-center">Events</h1>
 
-<div class="container-fluid">
+<div class="apple_pagination">
+   <%= will_paginate @events, :container => false %>
+</div>
+
+<div class=" cocontainer-fluid">
    <div class="row justify-content-md-center">
       <% @events.each do |event| %>
          <div class="col-lg-3 col-md-6">
             <div class="card">
                <% if event.main_image.attached? %>
-                 <%= image_tag event.main_image, class: "main-image" %>  
+                 <%= image_tag event.main_image, class: "main-image" %> 
                <% else %>
                  <%= image_tag "defaultevent.jpg", class: "main-image" %>
                <% end %>
@@ -19,21 +23,27 @@
                      <div class="col">
                         <%= link_to "Details", event_path(event), class: "btn btn-secondary btn-block stretched-link mt-auto" %>
                      </div>
-                     <% if can? :update, event %>
-                        <div class="col">
-                          <%= link_to "Edit", edit_event_path(event), class: "btn btn-warning btn-block stretched-link mt-auto" %>
-                        </div>
+                     <% if user_signed_in? %>
+                        <% if can? :update, event %>
+                           <div class="col">
+                             <%= link_to "Edit", edit_event_path(event), class: "btn btn-warning btn-block stretched-link mt-auto" %>
+                           </div>
+                        <% else %>
+                        <% @rsvp = Rsvp.find_by(event_id: event.id, user_id: current_user.id) %>
+                            <% if @rsvp != nil && @rsvp.attending_status? %>
+                               <div class="col">
+                                 <%= link_to "Unattend", unattend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
+                               </div>
+                            <% else %>
+                               <div class="col">
+                                 <%= link_to "Attend", attend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
+                               </div>
+                            <% end %>
+                        <% end %>
                      <% else %>
-                     <% @rsvp = Rsvp.find_by(event_id: event.id, user_id: current_user.id) %>
-                         <% if @rsvp != nil && @rsvp.attending_status? %>
-                            <div class="col">
-                              <%= link_to "Unattend", unattend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
-                            </div>
-                         <% else %>
-                            <div class="col">
-                              <%= link_to "Attend", attend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
-                            </div>
-                         <% end %>
+                        <div class="col">
+                           <%= link_to "Attend", attend_event_path(event), class: "btn btn-dark btn-block stretched-link mt-auto" %>
+                        </div>
                      <% end %>
                      </div>
                   </div>
@@ -41,4 +51,8 @@
          </div>
       <% end %>
    </div>
+</div>
+
+<div class="apple_pagination">
+   <%= will_paginate @events, :container => false %>
 </div>

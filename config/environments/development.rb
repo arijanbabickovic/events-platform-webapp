@@ -69,7 +69,7 @@ Rails.application.configure do
     domain: "srdjantwitter.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: 'eventsplatform2020@gmail.com',
-    password: "Jedanaest&12" #gmail account password
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"] #gmail account password
   }
 end

@@ -10,7 +10,7 @@
            <%= image_tag "defaultevent.jpg", class: "main-image" %>
         <% end %>
         <ul class="list-group list-group-flush" id="event_details">
-          <li class="list-group-item"><b>Created by:</b> <i><%= link_to @event.user.first_name, user_path(@event.user) %></i></li>
+          <li class="list-group-item"><b>Created by:</b> <i><%= link_to @event.user.name, user_path(@event.user) %></i></li>
           <li class="list-group-item"><b>Time:</b> <i><%= @event.datetime.strftime("%d-%m-%Y %I:%M%p") %></i></li> <br>
           <li class="list-group-item"><b>Location:</b></li>
           <li class="list-group-item"><i><%= @event.address_first_line %></i></li>

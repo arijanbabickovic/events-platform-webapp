@@ -244,8 +244,17 @@ textarea {
 
 .main-image {
   margin: 10px;
-  border-radius: 25px;
+  border-radius: 20px;
   height: 300px;
+  max-width: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+.form-image {
+  border-radius: 10px;
+  height: 300px;
+  max-width: 450px;
   object-fit: cover;
   display: block;
 }
@@ -265,3 +274,47 @@ textarea {
   min-height: 200px;
   padding-left: 40px;
 }
+
+.table-header {
+  padding-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+
+.admin-table {
+  margin-top: 2rem;
+}
+
+
+.apple_pagination {
+  background: transparent;
+  border: 1px solid transparent;
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+  
+.apple_pagination a, .apple_pagination span {
+  padding: 0.2em 0.3em; }
+  
+.apple_pagination .disabled {
+  color: #aaaaaa; }
+  
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+  
+.apple_pagination a {
+  text-decoration: none;
+  color: black; }
+  
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline; }

@@ -23,7 +23,7 @@
       <div class="col-lg-6 col-sm-12">
         <div class="form-group">
           <%= f.label :birthday, class: "form-questions" %><br />
-          <%= f.date_select :birthday, class: "form-control input-sm", autofocus: true %>
+          <%= f.date_select :birthday, class: "form-control input-sm", start_year: Date.today.year - 18, end_year: Date.today.year - 100, autofocus: true %>
         </div>
       </div>
       <div class="col-lg-6 col-sm-12">

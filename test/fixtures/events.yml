@@ -4,8 +4,28 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
+one:
+   id: 1
+   user: one
+   title: first event
+   description: description of first event
+   datetime: 10-08-2020
+   city: rome
+   postcode: 00196
+   latitude: 41.916830
+   longitude: 12.472850
+   address_first_line: via cardinal de luca 1
+   
+two: 
+   id: 2
+   user: one
+   title: second event
+   description: description of second event
+   datetime: 10-08-2020
+   city: rome
+   postcode: 00196
+   latitude: 41.928312
+   longitude: 12.486139
+   address_first_line: viale parioli 91
+   
 # column: value

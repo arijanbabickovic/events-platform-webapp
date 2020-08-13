@@ -1,60 +1,64 @@
 <%= form_with(model: event, local: true) do |form| %>
-  <div class="container">
-    <%= render "devise/shared/error_messages", resource: @event %>
-    <div class="form-group col-md-6">
-      <% if @event.main_image.attached? %>
-        <div class="text-center">
-         <%= image_tag @event.main_image.variant(resize_to_limit: [300, nil]), class: "main-image", style: "width: 300px; display: block;" %>
-        </div>
-      <% else %>
-         <%= image_tag "https://i.ibb.co/GFdWBnq/defaultevent.jpg", class: "main-image", style: "width: 300px; display: block;" %>
-      <% end %>
-      
-      <%= form.label :main_image %>
+<%= render "devise/shared/error_messages", resource: @event %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 offset-md-2">
+      <div class="form-group">
+        <% if @event.main_image.attached? %>
+          <div>
+            <%= image_tag @event.main_image, class: "form-image" %>
+          </div>
+        <% else %>
+          <div>
+            <%= image_tag "https://i.ibb.co/GFdWBnq/defaultevent.jpg", class: "form-image" %>
+          </div>
+        <% end %>
+  
+      <%= form.label :upload_an_image %>
       <%= form.file_field :main_image %>
+      </div>
     </div>
-    
-    <div class="form-group">
-      <%= form.label :title, class: "form-questions" %><br />
-      <%= form.text_field :title, class: "form-control", autofocus: true, placeholder: "Title" %>
-    </div>
-    
-    <div class="form-group">
-      <%= form.label :description, class: "form-questions" %><br />
-      <%= form.text_area :description, size: "24x12", class: "form-control", autofocus: true, placeholder: "Description" %>
-    </div>
-    
-    <div class="form-group">
-      <%= form.label :datetime, class: "form-questions" %><br />
-      <%= form.datetime_select :datetime, class: "form-control", autofocus: true %>
-    </div>
-    
-    <div class="form-group">
-      <%= form.label :address_first_line, class: "form-questions" %><br />
-      <%= form.text_field :address_first_line, class: "form-control", autofocus: true, placeholder: "First line of the address of the event" %>
-    </div>
-    
-    <div class="form-group">
-      <%= form.label :address_second_line, class: "form-questions" %><br />
-      <%= form.text_field :address_second_line, class: "form-control", autofocus: true, placeholder: "Second line of the address of the event (if applicable)" %>
-    </div>
-    
-    <div class="form-group">
-      <%= form.label :city, class: "form-questions" %><br />
-      <%= form.text_field :city, class: "form-control", autofocus: true, placeholder: "City" %>
-    </div>
-    
-    <div class="form-group">
-      <%= form.label :postcode, class: "form-questions" %><br />
-      <%= form.text_field :postcode, class: "form-control", autofocus: true, placeholder: "Postcode" %>
-    </div>
-    
-    
-  
-  
-  
-    <div class="col-md col-sm-12">
-      <%= form.submit class: "actions btn btn-dark btn-block stretched-link mt-auto" %>
+    <div class="col-md-4 offset-md-1">
+      <div class="form-group">
+        <%= form.label :title, class: "form-questions" %><br />
+        <%= form.text_field :title, class: "form-control", autofocus: true, placeholder: "Title" %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.label :description, class: "form-questions" %><br />
+        <%= form.text_area :description, size: "24x12", class: "form-control", autofocus: true, placeholder: "Description" %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.label :datetime, class: "form-questions" %><br />
+        <%= form.datetime_select :datetime, class: "form-control", start_year: Date.today.year, end_year: Date.today.year + 5, autofocus: true %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.label :address_first_line, class: "form-questions" %><br />
+        <%= form.text_field :address_first_line, class: "form-control", autofocus: true, placeholder: "First line of the address of the event" %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.label :address_second_line, class: "form-questions" %><br />
+        <%= form.text_field :address_second_line, class: "form-control", autofocus: true, placeholder: "Second line of the address of the event (if applicable)" %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.label :city, class: "form-questions" %><br />
+        <%= form.text_field :city, class: "form-control", autofocus: true, placeholder: "City" %>
+      </div>
+      
+      <div class="form-group">
+        <%= form.label :postcode, class: "form-questions" %><br />
+        <%= form.text_field :postcode, class: "form-control", autofocus: true, placeholder: "Postcode" %>
+      </div>
+      
+      
+      <div class="col-md col-sm-12 text-center">
+        <%= form.submit class: "actions btn btn-dark mt-auto" %>
+      </div>
     </div>
   </div>
+</div>
 <% end %>
