@@ -6,6 +6,7 @@ phases:
       ruby: latest
     commands:
       - echo Installing Bundler...
+      - gem install bundler
       - bundle install
 
 artifacts:
