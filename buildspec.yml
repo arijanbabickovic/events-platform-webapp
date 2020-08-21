@@ -6,7 +6,7 @@ phases:
       ruby: latest
     commands:
       - echo Installing Bundler...
-      - bundle install --with test
+      - bundle install
 
 artifacts:
   base-directory: dist/events
