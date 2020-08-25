@@ -9,10 +9,10 @@ phases:
       - export RAILS_ENV=test
   build:
     commands:
-      - bundle exec rake db:create
-      - bundle exec rake db:schema:load
-      - bundle exec rake db:migrate
-      - bundle exec rake db:setup
+      - bundle exec rails db:create
+      - bundle exec rails db:schema:load
+      - bundle exec rails db:migrate
+      - bundle exec rails db:setup
   post_build:
     commands:
-      bundle exec test
+      bundle exec rails test
