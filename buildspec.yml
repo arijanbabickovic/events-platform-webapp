@@ -2,14 +2,17 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      ruby: 2.6
     commands:
-      - echo Installing Bundler...
-      - gem install bundler
       - bundle install
-
-artifacts:
-  base-directory: dist/events
-  files:
-    - '**/*'
+  pre_build:
+    commands:
+      - export RAILS_ENV=test
+  build:
+    commands:
+      - bundle exec rake db:create
+      - bundle exec rake db:schema:load
+      - bundle exec rake db:migrate
+      - bundle exec rake db:setup
+  post_build:
+    commands:
+      bundle exec test
