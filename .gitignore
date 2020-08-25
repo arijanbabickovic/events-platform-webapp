@@ -5,7 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore ruby version file
-.ruby-version
+/.ruby-version
 
 # Ignore bundler config.
 /.bundle
