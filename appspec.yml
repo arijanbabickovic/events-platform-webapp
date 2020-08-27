@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/events
+permissions:
+  - object: /var/www/events
+    pattern: '**'
+    mode: '0755'
+    owner: root
+    group: root
+    type:
+      - file
+      - directory
+hooks:
+  BeforeInstall:
+    - location: deploy-scripts/before-install-hook.sh
+      timeout: 300
