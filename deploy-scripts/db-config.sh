@@ -7,4 +7,4 @@ cd /var/www/events/deployment
 rm -f config/database.yml
 
 # Link the database configuration to shared db config file
-ln -s /var/www/events/shared/config/database.yml config/database.yml
+ln -s /var/www/events/config/database.yml config/database.yml
