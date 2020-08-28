@@ -18,3 +18,7 @@ phases:
   post_build:
     commands:
       bundle exec rails test
+artifacts:
+  base-directory: dist/events
+  files:
+    - '**/*'
