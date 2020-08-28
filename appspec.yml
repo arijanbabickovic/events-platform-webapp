@@ -14,5 +14,18 @@ permissions:
       - directory
 hooks:
   BeforeInstall:
-    - location: deploy-scripts/before-install-hook.sh
-      timeout: 300
+    - location: deploy-scripts/arrange-deployment-folders.sh
+      runas: root
+  AfterInstall:
+    - location: deploy-scripts/db-config.sh
+      runas: nginx
+    - location: deploy-scripts/install-gems.sh
+      runas: nginx
+    - location: deploy-scripts/compile-assets.sh
+      runas: nginx
+    - location: deploy-scripts/run-db-migrations.sh
+      runas: nginx
+      
+  ApplicationStart:
+    - location: deploy-scripts/finish-installation.sh
+      runas: root
