@@ -4,7 +4,7 @@
 USER_HOST="bholt@myserver.com"
 REMOTE_DIR="~/web/myproj"
 set -e #exit on any error
-git pull
+#git pull
 
 #LOCAL
 #run tests
