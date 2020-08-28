@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # Go to the deployment directory
-cd /var/www/events
+cd /var/www/events/deployment
 
 # Remove if there is an existing database configuration
 rm -f config/database.yml
