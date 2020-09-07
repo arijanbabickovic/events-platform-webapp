@@ -10,3 +10,5 @@ mv /var/www/events/deployment /var/www/events/prev-deployment
 mkdir /var/www/events/deployment
 
 chown nginx:nginx /var/www/events/deployment
+
+mkdir /var/www/events/deployment/config
