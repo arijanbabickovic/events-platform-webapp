@@ -14,4 +14,4 @@ git config --global credential.UseHttpPath true
 # - Without development and test gems
 # - Using gemfile in current directory
 # - Also quietly. No need to generate all logs.
-RAILS_ENV=production bundle install --binstubs /var/www/events/bin --gemfile ./Gemfile --path /var/www/events/bundle --without development test --deployment --quiet
+RAILS_ENV=production bundle install --binstubs /var/www/events/bin --gemfile ./Gemfile --path /var/www/events --without development test --deployment --quiet
