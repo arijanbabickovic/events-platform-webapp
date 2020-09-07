@@ -12,7 +12,3 @@ mkdir /var/www/events/deployment
 chown nginx:nginx /var/www/events/deployment
 
 mkdir /var/www/events/deployment/config
-
-mkdir /var/www/events/bin
-
-mkdir /var/www/events/bundle
