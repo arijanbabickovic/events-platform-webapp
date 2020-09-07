@@ -16,6 +16,8 @@ hooks:
   BeforeInstall:
     - location: deploy-scripts/arrange-deployment-folders.sh
       runas: root
+    - location: deploy-scripts/install-dependencies.sh
+      runas: root
   AfterInstall:
     - location: deploy-scripts/db-config.sh
       runas: root
