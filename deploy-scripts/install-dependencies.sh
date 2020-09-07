@@ -13,4 +13,4 @@ yum install gcc-c++ -y
 
 # Setting ruby version 2.4 as default
 alternatives --set ruby /usr/bin/ruby2.4
-gem2.4 install bundler --bindir /usr/bin
+gem install bundler --bindir /usr/bin
