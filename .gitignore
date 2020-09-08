@@ -5,7 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore the Gemfile.lock file
-/Gemfile.lock
+# /Gemfile.lock
 
 
 # Ignore ruby version file
