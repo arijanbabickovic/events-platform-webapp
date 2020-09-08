@@ -37,7 +37,7 @@ gem 'will_paginate', '~> 3.1.0'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
-gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
+# gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -55,12 +55,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-passenger', '>= 0.1.1'
-  gem 'capistrano-rails'
-  gem 'capistrano-rvm'
-  gem 'capistrano-figaro-yml', '~> 1.0.2'
+  # gem 'capistrano'
+  # gem 'capistrano-bundler'
+  # gem 'capistrano-passenger', '>= 0.1.1'
+  # gem 'capistrano-rails'
+  # gem 'capistrano-rvm'
+  # gem 'capistrano-figaro-yml', '~> 1.0.2'
 end
 
 group :test do
