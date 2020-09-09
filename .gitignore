@@ -7,6 +7,8 @@
 # Ignore the Gemfile.lock file
 # /Gemfile.lock
 
+# Ignore vendor folder
+vendor/
 
 # Ignore ruby version file
 /.ruby-version
