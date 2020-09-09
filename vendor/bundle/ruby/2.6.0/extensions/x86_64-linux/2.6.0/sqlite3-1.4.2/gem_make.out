@@ -1,5 +1,5 @@
 current directory: /home/ubuntu/environment/events/vendor/bundle/ruby/2.6.0/gems/sqlite3-1.4.2/ext/sqlite3
-/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20200908-6155-xm6bl2.rb extconf.rb
+/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20200909-21020-1fl5k2b.rb extconf.rb
 checking for sqlite3.h... yes
 checking for pthread_create() in -lpthread... yes
 checking for -ldl... yes
@@ -74,4 +74,4 @@ linking shared-object sqlite3/sqlite3_native.so
 
 current directory: /home/ubuntu/environment/events/vendor/bundle/ruby/2.6.0/gems/sqlite3-1.4.2/ext/sqlite3
 make "DESTDIR=" install
-/usr/bin/install -m 0755 sqlite3_native.so ./.gem.20200908-6155-15slq0u/sqlite3
+/usr/bin/install -m 0755 sqlite3_native.so ./.gem.20200909-21020-14sdq7v/sqlite3

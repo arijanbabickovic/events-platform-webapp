@@ -1,5 +1,5 @@
 current directory: /home/ubuntu/environment/events/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
-/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20200908-6155-cngam1.rb extconf.rb
+/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20200909-21020-818pkw.rb extconf.rb
 creating Makefile
 
 current directory: /home/ubuntu/environment/events/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
@@ -12,4 +12,4 @@ linking shared-object skiptrace/internal/cruby.so
 
 current directory: /home/ubuntu/environment/events/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR=" install
-/usr/bin/install -m 0755 cruby.so ./.gem.20200908-6155-7rj8bh/skiptrace/internal
+/usr/bin/install -m 0755 cruby.so ./.gem.20200909-21020-aw2jgg/skiptrace/internal

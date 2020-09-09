@@ -1,5 +1,5 @@
 current directory: /home/ubuntu/environment/events/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.3/ext/nio4r
-/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20200908-3357-4huaa0.rb extconf.rb
+/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20200909-21020-18ri08f.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for sys/select.h... yes
@@ -96,4 +96,4 @@ linking shared-object nio4r_ext.so
 
 current directory: /home/ubuntu/environment/events/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.3/ext/nio4r
 make "DESTDIR=" install
-/usr/bin/install -m 0755 nio4r_ext.so ./.gem.20200908-3357-1ro4kbo
+/usr/bin/install -m 0755 nio4r_ext.so ./.gem.20200909-21020-1sqjepq

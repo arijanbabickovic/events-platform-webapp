@@ -1,5 +1,5 @@
 current directory: /home/ubuntu/environment/events/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.16/ext/mri
-/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20200908-3357-1udzcha.rb extconf.rb
+/home/ubuntu/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/ubuntu/.rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20200909-21020-1ubosc3.rb extconf.rb
 creating Makefile
 
 current directory: /home/ubuntu/environment/events/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.16/ext/mri
@@ -23,4 +23,4 @@ linking shared-object bcrypt_ext.so
 
 current directory: /home/ubuntu/environment/events/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.16/ext/mri
 make "DESTDIR=" install
-/usr/bin/install -m 0755 bcrypt_ext.so ./.gem.20200908-3357-15lvmoa
+/usr/bin/install -m 0755 bcrypt_ext.so ./.gem.20200909-21020-1kwjqtg
