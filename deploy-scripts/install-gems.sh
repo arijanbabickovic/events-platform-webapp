@@ -9,8 +9,8 @@ git config --global credential.helper '!aws codecommit credential-helper $@'
 git config --global credential.UseHttpPath true
 
 # Install gems using bundler
-# - Bundle location: /var/www/pisirpaylas/bundle
-# - Binary location: /var/www/pisirpaylas/bin
+# - Bundle location: /var/www/events/bundle
+# - Binary location: /var/www/events/bin
 # - Without development and test gems
 # - Using gemfile in current directory
 # - Also quietly. No need to generate all logs.
