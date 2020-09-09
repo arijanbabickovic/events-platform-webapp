@@ -8,7 +8,7 @@
 # /Gemfile.lock
 
 # Ignore vendor folder
-/vendor/
+vendor/**
 
 # Ignore ruby version file
 /.ruby-version
