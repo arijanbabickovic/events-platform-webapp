@@ -12,6 +12,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 curl -sSL https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 rvm get head
+source /etc/profile.d/rvm.sh
 rvm install 2.6.3
 
 gem install bundler
