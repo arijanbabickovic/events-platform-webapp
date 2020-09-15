@@ -6,6 +6,7 @@ cd /var/www/events/deployment
 # Get temporaray credentials for AWS CodeCommit
 # - Remember that the instance must have access rights to the CodeCommit repositories in Gemfile.
 
+# Installing RVM and Ruby
 sudo yum install gcc
 gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
@@ -15,8 +16,9 @@ rvm get head
 source /etc/profile.d/rvm.sh
 rvm install 2.6.3
 
+# Installing bundler
 gem install bundler
-sudo chown -R $(whoami):$(whoami) /var/www/events
+
 # Install gems using bundler
 # - Bundle location: /var/www/events/bundle
 # - Binary location: /var/www/events/bin
