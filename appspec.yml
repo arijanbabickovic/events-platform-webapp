@@ -1,5 +1,6 @@
 version: 0.0
 os: linux
+
 files:
   - source: /
     destination: /var/www/events
@@ -13,6 +14,10 @@ permissions:
       - file
       - directory
 hooks:
+  ValidateService:
+  - location: deploy-scripts/validate_service.sh
+      timeout: 30
+      runas: root
   BeforeInstall:
     - location: deploy-scripts/arrange-deployment-folders.sh
       runas: root
