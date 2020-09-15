@@ -16,7 +16,7 @@ source /etc/profile.d/rvm.sh
 rvm install 2.6.3
 
 gem install bundler
-
+sudo chown -R $(whoami):$(whoami) /var/www/events
 # Install gems using bundler
 # - Bundle location: /var/www/events/bundle
 # - Binary location: /var/www/events/bin
