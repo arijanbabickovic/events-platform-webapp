@@ -7,6 +7,7 @@ cd /var/www/events/deployment
 # - Remember that the instance must have access rights to the CodeCommit repositories in Gemfile.
 git config --global credential.helper '!aws codecommit credential-helper $@'
 git config --global credential.UseHttpPath true
+gem install bundler
 
 # Install gems using bundler
 # - Bundle location: /var/www/events/bundle
