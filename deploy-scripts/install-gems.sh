@@ -28,4 +28,7 @@ gem install bundler
 # - Without development and test gems
 # - Using gemfile in current directory
 # - Also quietly. No need to generate all logs.
-RAILS_ENV=production bundle install --gemfile ./Gemfile --path /var/www/events/ --without development test --deployment --quiet
+bundle config set deployment 'true'
+bundle config set path '/var/www/events/'
+bundle config set without 'development test'
+RAILS_ENV=production bundle install --gemfile ./Gemfile --quiet
