@@ -31,4 +31,5 @@ gem install bundler
 bundle config set deployment 'true'
 bundle config set path '/var/www/events/'
 bundle config set without 'development test'
-RAILS_ENV=production bundle install --gemfile ./Gemfile --quiet
+RAILS_ENV=production bundle install --deployment
+# RAILS_ENV=production bundle install --gemfile ./Gemfile --quiet
