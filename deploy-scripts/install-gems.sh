@@ -17,7 +17,7 @@ cd /var/www/events/deployment
 # rvm install 2.6.3
 
 # Installing git
-yum install git
+yum install -y git
 
 # Installing bundler
 gem install bundler
