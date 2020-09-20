@@ -33,4 +33,5 @@ bundle config set path '/var/www/events/'
 bundle config set without 'development test'
 
 cd /var/www/events
+gem install nokogiri -v 1.10.10 --source
 RAILS_ENV=production bundle install --gemfile ./Gemfile --quiet
