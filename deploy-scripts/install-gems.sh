@@ -33,8 +33,5 @@ bundle config set path '/var/www/events/'
 bundle config set without 'development test'
 
 cd /var/www/events
-FROM ruby:2.6-alpine
-
-RUN apk add --no-cache build-base
-RUN gem install nokogiri
+guix package -i ruby-nokogiri
 RAILS_ENV=production bundle install --gemfile ./Gemfile --quiet
