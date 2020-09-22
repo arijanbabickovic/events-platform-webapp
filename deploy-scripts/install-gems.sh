@@ -19,6 +19,8 @@ cd /var/www/events/
 # Installing git
 yum install -y git
 
+gem install nokogiri -v '1.10.10' --source 'https://rubygems.org/'
+
 # Installing bundler
 gem install bundler
 

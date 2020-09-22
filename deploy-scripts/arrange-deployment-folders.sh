@@ -12,3 +12,4 @@
 # chown nginx:nginx /var/www/events/deployment
 
 # mkdir /var/www/events/deployment/config
+yum install ruby-devel
