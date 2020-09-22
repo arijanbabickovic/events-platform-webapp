@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # Go to the deployment directory
-cd /var/www/events/deployment
+cd /var/www/events/
 
 # Get temporaray credentials for AWS CodeCommit
 # - Remember that the instance must have access rights to the CodeCommit repositories in Gemfile.
@@ -28,10 +28,8 @@ gem install bundler
 # - Without development and test gems
 # - Using gemfile in current directory
 # - Also quietly. No need to generate all logs.
-# bundle config set deployment 'true'
-# bundle config set path '/var/www/events/'
-# bundle config set without 'development test'
+bundle config set deployment 'true'
+bundle config set path '/var/www/events/'
+bundle config set without 'development test'
 
-cd /var/www/events
-# guix package -i ruby-nokogiri
 RAILS_ENV=production bundle install --gemfile ./Gemfile --quiet
