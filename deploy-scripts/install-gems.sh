@@ -17,12 +17,10 @@ cd /var/www/events/
 # rvm install 2.6.3
 
 # Installing git
-yum install -y git
-
-gem install nokogiri -v '1.10.10' --source 'https://rubygems.org/'
+sudo apt install git-all
 
 # Installing bundler
-gem install bundler
+# gem install bundler
 
 # Install gems using bundler
 # - Bundle location: /var/www/events/bundle
