@@ -27,6 +27,6 @@ hooks:
     - location: deploy-scripts/run-db-migrations.sh
       runas: nginx
       
-  ApplicationStart:
-    - location: deploy-scripts/finish-installation.sh
-      runas: root
+  # ApplicationStart:
+  #   - location: deploy-scripts/finish-installation.sh
+  #     runas: root
