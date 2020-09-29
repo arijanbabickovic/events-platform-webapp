@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # Go to the deployment directory
-cd /var/www/events/
+cd /home/deploy/events/current/public
 
 # Load environment variables
 source /etc/profile

@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # Go to the deployment directory
-cd /var/www/events/
+cd /home/deploy/events/current/public
 
 # Get temporaray credentials for AWS CodeCommit
 # - Remember that the instance must have access rights to the CodeCommit repositories in Gemfile.

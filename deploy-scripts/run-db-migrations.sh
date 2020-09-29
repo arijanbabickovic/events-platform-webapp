@@ -4,7 +4,7 @@
 source /etc/profile
 
 # Go to the deployment directory
-cd /var/www/events/
+cd /home/deploy/events/current/public
 
 # Run migrations in production
 RAILS_ENV=production bundle exec rake db:migrate

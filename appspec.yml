@@ -3,9 +3,9 @@ os: linux
 
 files:
   - source: /
-    destination: /var/www/events
+    destination: /home/deploy/events/current/public
 permissions:
-  - object: /var/www/events
+  - object: /home/deploy/events/current/public
     pattern: '**'
     mode: '0755'
     owner: root
@@ -19,14 +19,14 @@ hooks:
       runas: root
   AfterInstall:
     - location: deploy-scripts/db-config.sh
-      runas: nginx
+      runas: deploy
     - location: deploy-scripts/install-gems.sh
-      runas: nginx
+      runas: deploy
     - location: deploy-scripts/compile-assets.sh
-      runas: nginx
+      runas: deploy
     - location: deploy-scripts/run-db-migrations.sh
-      runas: nginx
+      runas: deploy
       
-  # ApplicationStart:
-  #   - location: deploy-scripts/finish-installation.sh
-  #     runas: root
+  ApplicationStart:
+    - location: deploy-scripts/finish-installation.sh
+      runas: root
