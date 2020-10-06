@@ -52,6 +52,7 @@ group :development do
   gem "capistrano-rails", "~> 1.6", require: false
   gem 'capistrano-passenger', '~> 0.2.0', require: false
   gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4', require: false
+  gem 'capistrano-ssh-doctor', git: 'https://github.com/capistrano-plugins/capistrano-ssh-doctor.git'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'

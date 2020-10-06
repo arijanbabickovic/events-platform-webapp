@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/capistrano-plugins/capistrano-ssh-doctor.git
+  revision: 0e5de7c1c4d987c16adeaea296f0e863b9cbec6f
+  specs:
+    capistrano-ssh-doctor (1.0.0)
+      capistrano (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -314,6 +321,7 @@ DEPENDENCIES
   capistrano-passenger (~> 0.2.0)
   capistrano-rails (~> 1.6)
   capistrano-rbenv (~> 2.1, >= 2.1.4)
+  capistrano-ssh-doctor!
   capybara (>= 2.15)
   devise
   dotenv-rails
