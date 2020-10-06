@@ -72,4 +72,5 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"] #gmail account password
   }
+  config.hosts << "cc86b942b5154c85a5f627dc721cb218.vfs.cloud9.eu-west-2.amazonaws.com"
 end
