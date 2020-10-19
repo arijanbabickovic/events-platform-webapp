@@ -2,7 +2,7 @@
 lock "~> 3.14.1"
 
 set :application, "events"
-set :repo_url, "https://git-codecommit.eu-west-2.amazonaws.com/v1/repos/EventsRepo"
+set :repo_url, "https://github.com/arijantes/events.git"
 
 set :bundle_gemfile, "events/Gemfile"
 
@@ -15,7 +15,7 @@ set :deploy_to, "/home/deploy/#{fetch :application}"
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
 # Only keep the last 5 releases to save disk space
-set :keep_releases, 5
+set :keep_releases, 2
 
 # Optionally, you can symlink your database.yml and/or secrets.yml file from the shared directory during deploy
 # This is useful if you don't want to use ENV variables
