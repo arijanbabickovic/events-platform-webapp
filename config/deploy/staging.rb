@@ -1,3 +1,7 @@
+server "18.133.186.219", user: "deploy", roles: %w{app db web}
+
+config.require_master_key = true
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
