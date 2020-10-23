@@ -1,4 +1,21 @@
 Rails.application.configure do
+
+
+  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "srdjantwitter.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"] #gmail account password
+  }
+  config.hosts << "cc86b942b5154c85a5f627dc721cb218.vfs.cloud9.eu-west-2.amazonaws.com"
   # Settings specified here will take precedence over those in config/application.rb.
   config.require_master_key = true
   # Code is not reloaded between requests.
