@@ -15,7 +15,7 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"] #gmail account password
   }
-  config.hosts << "18.133.186.219"
+  config.hosts << "18.132.213.34"
   # Settings specified here will take precedence over those in config/application.rb.
   config.require_master_key = true
   # Code is not reloaded between requests.
