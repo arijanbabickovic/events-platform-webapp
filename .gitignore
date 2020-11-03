@@ -21,6 +21,11 @@ vendor/**
 /db/*.sqlite3-journal
 /db/*.sqlite3-*
 
+# Not to overwrite the database on the deploy server
+/db/staging.sqlite3
+/db/test.sqlite3
+/db/test-backup.sqlite3
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
