@@ -1,12 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
-namespace :deploy do
-  Rake::Task["migrate"].clear_actions
-  task :migrate do
-    puts "no migration"
-  end
-end
 
 set :application, "events"
 set :repo_url, "https://github.com/arijantes/events.git"
