@@ -8,6 +8,12 @@ set :branch, "master"
 set :deploy_to, "/home/deploy/#{fetch :application}"
 append :linked_files, "config/master.key"
 
+namespace :deploy do
+  desc "No ActiveRecord override"
+  task :migrate do
+  end
+end
+
 
 
 # Optionally, you can symlink your database.yml and/or secrets.yml file from the shared directory during deploy
