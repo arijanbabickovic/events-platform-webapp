@@ -3,6 +3,7 @@ require_relative '../config/environment'
 require 'rails/test_help'
 
 class ActiveSupport::TestCase
+  ActiveJob::Base.queue_adapter = :test
 
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors, with: :threads)
