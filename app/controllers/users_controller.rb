@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     end
     
     def change_permission
-        if current_user.permission == "admin"
+        if current_user.permissions == "admin"
             User.change_permission(params[:permission])
         end
         redirect_to admin_dashboard_path

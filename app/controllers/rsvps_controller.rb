@@ -16,7 +16,7 @@ class RsvpsController < ApplicationController
       rsvp = Rsvp.find_by(event_id: @event.id, user_id: current_user.id)
       rsvp.status = "not_attending"
       rsvp.save
-      redirect_to events_path, notice: 'You are no longer attending this event.'
+      redirect_to event_path(@event), notice: 'You are no longer attending this event.'
    end
    
    

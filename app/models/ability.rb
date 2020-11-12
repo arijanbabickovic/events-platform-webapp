@@ -10,6 +10,7 @@ class Ability
     elsif user.permissions == "creator"
       can :manage, Event, user_id: user.id
       can :create, Event
+      can :read, :all
     else
       can :read, :all
     end
