@@ -1,1 +1,1 @@
-Dependencies: NodeJS, Yarn, Webpacker.
+An Events Platform Rails web-app where people can see/attend/create events based on their permissions. Automated emails sent out to the organiser of the event when a new user RSVPs and to the users 24 hours before the event. Using Google Maps API to display the event location. Project 7 on my OpenClassrooms Ruby Developer path. Dependencies: NodeJS, Yarn, Webpacker.
