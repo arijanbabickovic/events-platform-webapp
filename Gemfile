@@ -29,7 +29,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'cancancan'
-gem 'sidekiq', '~> 6.1.0'
+gem 'sidekiq', '~> 6.4.0'
 gem 'figaro'
 gem 'geocoder'
 gem 'dotenv-rails', groups: [:development, :test]
